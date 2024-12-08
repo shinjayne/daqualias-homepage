@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import useWindowDimensions from "@/hook/useWindowDimensions";
+import {motion} from "motion/react";
 
 export default function Home() {
 
@@ -9,8 +10,14 @@ export default function Home() {
     if (width < 1000) {
         return (
             <>
-                <div className={'flex flex-col justify-center items-center h-screen'}>
-
+                <motion.div className={'flex flex-col justify-center items-center h-screen'}
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            transition={{
+                                delay: 0.5,
+                                duration: 1,
+                                ease: 'linear'
+                            }}>
                     <img src={'/assets/logo-w.svg'} className={'w-[90vw] h-auto'}/>
 
                     <div className={'text-white text-center mt-2 mb-6 p-4'}>We make something for those who love all the
@@ -22,7 +29,7 @@ export default function Home() {
                         href={'https://instagram.com/daqualias'}>instagram</Link>
 
 
-                </div>
+                </motion.div>
             </>
         );
     } else {
