@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 // import localFont from "next/font/local";
 import {Red_Hat_Text} from 'next/font/google'
 import "./globals.css";
+import ogImage from './ogImage.png'
 
 const redHatText = Red_Hat_Text({ subsets: ['latin'] })
 
@@ -17,8 +18,23 @@ const redHatText = Red_Hat_Text({ subsets: ['latin'] })
 // });
 
 export const metadata: Metadata = {
-  title: "DAQUALIAS",
+  title: "DAQUALIAS 다퀄리아스",
   description: "We create something for those who love all the creativity and culture.",
+    openGraph: {
+        title: 'DAQUALIAS 다퀄리아스',
+        type: 'website',
+        url: 'https://www.daqualias.com',
+        siteName: 'DAQUALIAS',
+        description: 'We create something for those who love all the creativity and culture.',
+        images: [
+            {
+                url: ogImage.src,
+                width: ogImage.width,
+                height: ogImage.height,
+                alt: 'DAQUALIAS',
+            },
+        ],
+    },
 };
 
 export default function RootLayout({
