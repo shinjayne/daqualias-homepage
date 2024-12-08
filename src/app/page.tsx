@@ -1,12 +1,12 @@
 'use client'
 
 import Link from "next/link";
-import useWindowDimensions from "@/hook/useWindowDimensions";
 import {motion} from "motion/react";
+import {useWindowSize} from "@uidotdev/usehooks";
 
 export default function Home() {
 
-    const {width} = useWindowDimensions()
+    const {width} = useWindowSize()
     if (width < 1000) {
         return (
             <>
