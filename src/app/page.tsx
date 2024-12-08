@@ -7,7 +7,7 @@ import {useWindowSize} from "@uidotdev/usehooks";
 export default function Home() {
 
     const {width} = useWindowSize()
-    if (width < 1000) {
+    if (width !== null && width < 1000) {
         return (
             <>
                 <motion.div className={'flex flex-col justify-center items-center h-screen'}
